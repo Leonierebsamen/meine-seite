@@ -1,75 +1,287 @@
-/* Sonnenblumen-Design */
-:root {
-  color-scheme: light;
-  color: #2c2c2c;
-  background: #fff8d6;
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-}
-
+/* Schweizer Alpen - Design */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #1a1a1a;
+  background-color: #E8F0F8;
+}
+
 body {
-  margin: 0;
-  min-height: 100vh;
-  line-height: 1.65;
-  background-color: #fff8d6;
+  background-color: #E8F0F8;
+  color: #1a1a1a;
+  line-height: 1.8;
 }
 
-.page-shell {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 48px 24px;
-}
-
+/* Hero Section mit Bergen */
 .hero {
-  padding: 40px 32px;
-  background: linear-gradient(180deg, rgba(255, 235, 153, 0.9), rgba(255, 243, 204, 0.75));
-  border-radius: 24px;
-  box-shadow: 0 18px 40px rgba(99, 72, 19, 0.08);
+  position: relative;
+  height: 450px;
+  background: linear-gradient(135deg, #7BA8D1 0%, #5A8BC0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px 30px;
+}
+
+.mountain-header {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .hero h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  letter-spacing: -0.04em;
+  position: relative;
+  z-index: 20;
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 300;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  letter-spacing: 3px;
 }
 
-.hero .intro {
-  margin: 0;
-  color: #4b3c10;
-  max-width: 720px;
+/* Intro Section */
+.intro {
+  padding: 80px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #E8F0F8;
+}
+
+.intro p {
   font-size: 1.1rem;
+  color: #2c2c2c;
+  line-height: 1.9;
 }
 
-.info-grid {
+/* Content Sections */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
   display: grid;
-  gap: 24px;
-  margin-top: 42px;
+  grid-template-columns: 1fr;
+  gap: 60px;
 }
 
-.info-grid article {
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(188, 144, 39, 0.2);
-  border-radius: 20px;
+.section-card {
+  background-color: white;
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(90, 139, 192, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-grid h2 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: #3d2d10;
-  font-size: 1.6rem;
+.section-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(90, 139, 192, 0.2);
 }
 
-.info-grid p {
-  margin: 0;
-  color: #453716;
+.section-card h2 {
+  font-size: 2.2rem;
+  color: #1A4B77;
+  margin-bottom: 30px;
+  font-weight: 600;
+  border-bottom: 4px solid #5A8BC0;
+  padding-bottom: 15px;
 }
 
-@media (min-width: 720px) {
-  .info-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.section-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.image-grid figure {
+  text-align: center;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(90, 139, 192, 0.15);
+}
+
+.image-grid figcaption {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #5A8BC0;
+  font-weight: 500;
+}
+
+/* Mountain Range Section */
+.mountains-section {
+  margin: 40px 0;
+  padding: 30px;
+  background-color: #F5F9FC;
+  border-radius: 8px;
+}
+
+.mountain-range {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+}
+
+/* Fun Facts Grid */
+.fun-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.fact-item {
+  background-color: #F5F9FC;
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 5px solid #5A8BC0;
+  transition: transform 0.3s ease;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+}
+
+.fact-item h3 {
+  font-size: 1.3rem;
+  color: #1A4B77;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.fact-item p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.fact-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(90, 139, 192, 0.15);
+}
+
+/* Footer Mountains */
+.footer-mountains {
+  height: 200px;
+  background: linear-gradient(180deg, #E8F0F8 0%, #D0E0F0 100%);
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.mountain-footer {
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: #5A8BC0;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    height: 350px;
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .intro {
+    padding: 50px 20px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .section-card {
+    padding: 40px;
+  }
+
+  .section-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .image-grid img {
+    height: 250px;
+  }
+
+  .fun-facts {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 280px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .section-card {
+    padding: 25px;
+  }
+
+  .section-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-card p,
+  .intro p {
+    font-size: 0.95rem;
+  }
+
+  .fact-item h3 {
+    font-size: 1.1rem;
   }
 }
