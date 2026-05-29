@@ -81,14 +81,14 @@
     </section>
 
     <!-- Inteid="berge" raktives Element: Die 8 größten Berge der Alpen -->
-    <section class="mountains-section reveal">
+    <section id="berge" class="mountains-section reveal">
       <div class="container">
         <div class="section-intro reveal">
-          <h2>Die 8 höchsten Berge der Alpen</h2>
-          <p>Entdecke die majestätischen Gipfel der Alpen. Klick auf den Knopf, um einen zufälligen Berg zu erkunden.</p>
+          <h2>Lernen Sie mehr über die einzelnen Berge</h2>
+          <p>Entdecke die majestätischen Gipfel der Alpen. Drücke den Knopf, damit ein weiterer Berg erscheint und du seine Geschichten lesen kannst.</p>
         </div>
         <div class="mountains-interactive">
-          <button id="randomMountainBtn" class="mountain-btn">🏔️ Zufälliger Berg</button>
+          <button id="randomMountainBtn" class="mountain-btn">🔄 Neuer Berg</button>
           <div class="mountain-display">
             <div class="mountain-image-container">
               <img id="mountainImage" src="" alt="Berg der Alpen" />
@@ -161,15 +161,19 @@
         location: 'Graubünden, CH / Haute-Savoie, FR',
         countries: 'Schweiz / Frankreich',
         description: 'Der höchste Berg der Alpen und einer der berühmtesten Berge Europas. Der Mont-Blanc ist ein beliebtes Ziel für Bergsteiger und bietet atemberaubende Ausblicke auf die umliegenden Gipfel. Die Route über die Goûter-Route ist der klassische Aufstiegsweg.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1529576463632-f0d9a6ff0a73?auto=format&fit=crop&w=800&q=80'
       },
+    ];
+
+    let lastMountainIndex = -1;
+
       {
         name: 'Monte Rosa',
         height: '4.634 m',
         location: 'Wallis, CH / Piemont, IT',
         countries: 'Schweiz / Italien',
         description: 'Die höchste Gebirgsmasse der Alpen und eine beeindruckende Gruppe von Bergen. Monte Rosa ist bekannt für ihre prächtigen Gletscher und ist ein Klassiker für erfahrene Bergsteiger. Das Riffelhorn bietet eine einfachere Alternative.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1517821364899-717c16f92462?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Dom',
@@ -177,7 +181,7 @@
         location: 'Wallis, CH',
         countries: 'Schweiz',
         description: 'Der höchste Berg, der vollständig in der Schweiz liegt. Der Dom ist weniger besucht als andere Viertausender, bietet aber eine großartige Bergsteiger-Erfahrung. Die Route über die Täsch-Alpe ist relativ sicher und technisch einfach.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1516569422450-90e6402a9f9d?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Liskamm',
@@ -185,7 +189,7 @@
         location: 'Wallis, CH / Piemont, IT',
         countries: 'Schweiz / Italien',
         description: 'Ein imposanter Berg an der Schweiz-Italien-Grenze, bekannt für seine spitzen Gipfel. Liskamm ist ein anspruchsvoller Berg mit technisch schwierigen Abschnitten. Die Besteigung erfordert Erfahrung und Geschick.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1541817319106-b7f5e4e5211a?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Breithorn',
@@ -193,7 +197,7 @@
         location: 'Wallis, CH / Aosta, IT',
         countries: 'Schweiz / Italien',
         description: 'Ein beliebter Berg für erste Hochtouren und die Eröffnung der "Viertausender-Saison". Der Breithorn ist relativ sicher zu besteigen und bietet fantastische Ausblicke auf Monte Rosa und den Mont-Blanc. Ideal für Anfänger.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Gran Paradiso',
@@ -201,7 +205,7 @@
         location: 'Piemont, IT / Aosta, IT',
         countries: 'Italien',
         description: 'Der höchste Berg, der vollständig in Italien liegt. Gran Paradiso ist ein beliebtes Ziel für Bergsteiger und befindet sich im Gran-Paradiso-Nationalpark. Die Route ist relativ einfach und gut markiert.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Monte Leone',
@@ -209,7 +213,7 @@
         location: 'Wallis, CH / Piemont, IT',
         countries: 'Schweiz / Italien',
         description: 'Ein majestätischer Berg mit grandiosen Aussichten auf die Walliser Alpen. Monte Leone ist weniger berüchtigt, aber bietet eine fantastische Bergsteiger-Erfahrung. Die Route über das Alpjoch ist gut und relativ sicher.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Zinalrothorn',
@@ -217,16 +221,56 @@
         location: 'Wallis, CH',
         countries: 'Schweiz',
         description: 'Ein spektakulärer Berggipfel mit einer charakteristischen pyramidalen Form. Das Zinalrothorn ist berühmt für seine spitzenkronige Silhouette und bietet eine technisch anspruchsvolle Besteigung. Ein Favorit unter erfahrenen Bergsteigern.',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1509518601282-6eb0ee161c69?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Matterhorn',
+        height: '4.478 m',
+        location: 'Wallis, CH / Aostatal, IT',
+        countries: 'Schweiz / Italien',
+        description: 'Das ikonische Matterhorn ist einer der bekanntesten Berge der Alpen. Seine pyramidenförmige Silhouette ist ein Symbol für die Schweiz und eine Herausforderung für erfahrene Kletterer.',
+        image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Eiger',
+        height: '3.970 m',
+        location: 'Bern, CH',
+        countries: 'Schweiz',
+        description: 'Die Nordwand des Eiger gehört zu den berühmtesten und schwierigsten Felswänden der Welt. Der Berg ist ein Klassiker für erfahrene Alpinisten und prägt die Landschaft des Berner Oberlands.',
+        image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Großglockner',
+        height: '3.798 m',
+        location: 'Osttirol, AT / Kärnten, AT',
+        countries: 'Österreich',
+        description: 'Der Großglockner ist der höchste Berg Österreichs und ein beliebtes Ziel im Nationalpark Hohe Tauern. Die normale Route ist anspruchsvoll, aber gut markiert und landschaftlich spektakulär.',
+        image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Weisshorn',
+        height: '4.506 m',
+        location: 'Wallis, CH',
+        countries: 'Schweiz',
+        description: 'Das Weisshorn gilt als einer der schönsten Berge der Alpen und beeindruckt durch seine schlanke, pyramidenartige Gestalt. Eine anspruchsvolle Besteigung für erfahrene Bergsteiger.',
+        image: 'https://images.unsplash.com/photo-1522558914161-0a6879f2f16a?auto=format&fit=crop&w=800&q=80'
       }
     ];
 
+    let lastMountainIndex = -1;
+
     // Function to display a random mountain
     function displayRandomMountain() {
-      const randomIndex = Math.floor(Math.random() * mountains.length);
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * mountains.length);
+      } while (randomIndex === lastMountainIndex && mountains.length > 1);
+      lastMountainIndex = randomIndex;
       const mountain = mountains[randomIndex];
 
-      document.getElementById('mountainImage').src = mountain.image;
+      const mountainImage = document.getElementById('mountainImage');
+      mountainImage.src = mountain.image;
+      mountainImage.alt = `${mountain.name} in den Alpen`;
       document.getElementById('mountainName').textContent = mountain.name;
       document.getElementById('mountainHeight').textContent = mountain.height;
       document.getElementById('mountainLocation').textContent = mountain.location;
