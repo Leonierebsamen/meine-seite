@@ -290,10 +290,30 @@ a {
   object-fit: contain;
 }
 
+/* Panorama Full Width */
+.panorama-full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.panorama-full-width img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 /* Footer */
 .page-footer {
   padding: 2.5rem 0 3rem;
   background: linear-gradient(180deg, #081a2b 0%, #0a2a43 100%);
+  margin-top: 0;
 }
 
 .footer-inner {
