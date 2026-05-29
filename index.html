@@ -79,6 +79,42 @@
       </div>
     </section>
 
+    <!-- Interaktives Element: Die 8 größten Berge der Alpen -->
+    <section class="mountains-section reveal">
+      <div class="container">
+        <div class="section-intro reveal">
+          <h2>Die 8 höchsten Berge der Alpen</h2>
+          <p>Entdecke die majestätischen Gipfel der Alpen. Klick auf den Knopf, um einen zufälligen Berg zu erkunden.</p>
+        </div>
+        <div class="mountains-interactive">
+          <button id="randomMountainBtn" class="mountain-btn">🏔️ Zufälliger Berg</button>
+          <div class="mountain-display">
+            <div class="mountain-image-container">
+              <img id="mountainImage" src="" alt="Berg der Alpen" />
+            </div>
+            <div class="mountain-info">
+              <h3 id="mountainName"></h3>
+              <div class="mountain-details">
+                <div class="detail-item">
+                  <span class="detail-label">Höhe:</span>
+                  <span id="mountainHeight"></span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Lage:</span>
+                  <span id="mountainLocation"></span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Grenzländer:</span>
+                  <span id="mountainCountries"></span>
+                </div>
+              </div>
+              <p id="mountainDescription" class="mountain-description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Panorama-Bereich mit großem Alpenpanorama-Foto -->
     <section id="panorama" class="panorama-section reveal">
       <div class="container">
@@ -115,6 +151,93 @@
     });
 
     revealElements.forEach((element) => observer.observe(element));
+
+    // Mountains Interactive Data
+    const mountains = [
+      {
+        name: 'Mont-Blanc',
+        height: '4.808 m',
+        location: 'Graubünden, CH / Haute-Savoie, FR',
+        countries: 'Schweiz / Frankreich',
+        description: 'Der höchste Berg der Alpen und einer der berühmtesten Berge Europas. Der Mont-Blanc ist ein beliebtes Ziel für Bergsteiger und bietet atemberaubende Ausblicke auf die umliegenden Gipfel. Die Route über die Goûter-Route ist der klassische Aufstiegsweg.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Monte Rosa',
+        height: '4.634 m',
+        location: 'Wallis, CH / Piemont, IT',
+        countries: 'Schweiz / Italien',
+        description: 'Die höchste Gebirgsmasse der Alpen und eine beeindruckende Gruppe von Bergen. Monte Rosa ist bekannt für ihre prächtigen Gletscher und ist ein Klassiker für erfahrene Bergsteiger. Das Riffelhorn bietet eine einfachere Alternative.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Dom',
+        height: '4.545 m',
+        location: 'Wallis, CH',
+        countries: 'Schweiz',
+        description: 'Der höchste Berg, der vollständig in der Schweiz liegt. Der Dom ist weniger besucht als andere Viertausender, bietet aber eine großartige Bergsteiger-Erfahrung. Die Route über die Täsch-Alpe ist relativ sicher und technisch einfach.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Liskamm',
+        height: '4.527 m',
+        location: 'Wallis, CH / Piemont, IT',
+        countries: 'Schweiz / Italien',
+        description: 'Ein imposanter Berg an der Schweiz-Italien-Grenze, bekannt für seine spitzen Gipfel. Liskamm ist ein anspruchsvoller Berg mit technisch schwierigen Abschnitten. Die Besteigung erfordert Erfahrung und Geschick.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Breithorn',
+        height: '4.164 m',
+        location: 'Wallis, CH / Aosta, IT',
+        countries: 'Schweiz / Italien',
+        description: 'Ein beliebter Berg für erste Hochtouren und die Eröffnung der "Viertausender-Saison". Der Breithorn ist relativ sicher zu besteigen und bietet fantastische Ausblicke auf Monte Rosa und den Mont-Blanc. Ideal für Anfänger.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Gran Paradiso',
+        height: '4.061 m',
+        location: 'Piemont, IT / Aosta, IT',
+        countries: 'Italien',
+        description: 'Der höchste Berg, der vollständig in Italien liegt. Gran Paradiso ist ein beliebtes Ziel für Bergsteiger und befindet sich im Gran-Paradiso-Nationalpark. Die Route ist relativ einfach und gut markiert.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Monte Leone',
+        height: '4.618 m',
+        location: 'Wallis, CH / Piemont, IT',
+        countries: 'Schweiz / Italien',
+        description: 'Ein majestätischer Berg mit grandiosen Aussichten auf die Walliser Alpen. Monte Leone ist weniger berüchtigt, aber bietet eine fantastische Bergsteiger-Erfahrung. Die Route über das Alpjoch ist gut und relativ sicher.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        name: 'Zinalrothorn',
+        height: '4.221 m',
+        location: 'Wallis, CH',
+        countries: 'Schweiz',
+        description: 'Ein spektakulärer Berggipfel mit einer charakteristischen pyramidalen Form. Das Zinalrothorn ist berühmt für seine spitzenkronige Silhouette und bietet eine technisch anspruchsvolle Besteigung. Ein Favorit unter erfahrenen Bergsteigern.',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    // Function to display a random mountain
+    function displayRandomMountain() {
+      const randomIndex = Math.floor(Math.random() * mountains.length);
+      const mountain = mountains[randomIndex];
+
+      document.getElementById('mountainImage').src = mountain.image;
+      document.getElementById('mountainName').textContent = mountain.name;
+      document.getElementById('mountainHeight').textContent = mountain.height;
+      document.getElementById('mountainLocation').textContent = mountain.location;
+      document.getElementById('mountainCountries').textContent = mountain.countries;
+      document.getElementById('mountainDescription').textContent = mountain.description;
+    }
+
+    // Event listener for the button
+    document.getElementById('randomMountainBtn').addEventListener('click', displayRandomMountain);
+
+    // Display a random mountain on page load
+    displayRandomMountain();
   </script>
 </body>
 </html>

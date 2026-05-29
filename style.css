@@ -222,6 +222,121 @@ a {
   background: #8ac6a0;
 }
 
+/* Mountains Interactive Section */
+.mountains-section {
+  margin-top: 5rem;
+  padding: 5rem 0 3rem;
+}
+
+.mountains-interactive {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.mountain-btn {
+  background: linear-gradient(135deg, #8ac6a0 0%, #6ab582 100%);
+  color: #0a2a43;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(138, 198, 160, 0.3);
+  margin-bottom: 2.5rem;
+}
+
+.mountain-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(138, 198, 160, 0.4);
+}
+
+.mountain-btn:active {
+  transform: translateY(-1px);
+}
+
+.mountain-display {
+  background: #0f3f63;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 26px 70px rgba(7, 20, 36, 0.16);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2.2rem;
+}
+
+.mountain-image-container {
+  overflow: hidden;
+  border-radius: 16px;
+  height: 350px;
+}
+
+.mountain-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mountain-display:hover .mountain-image-container img {
+  transform: scale(1.05);
+}
+
+.mountain-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mountain-info h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.mountain-details {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #8ac6a0;
+}
+
+.detail-item span:last-child {
+  color: #d8e5f1;
+  text-align: right;
+}
+
+.mountain-description {
+  color: #dbe7f5;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
 /* Panorama Section */
 .panorama-section {
   margin-top: 5rem;
@@ -345,6 +460,14 @@ a {
   .panorama-content {
     gap: 1.5rem;
   }
+
+  .mountain-display {
+    grid-template-columns: 1fr;
+  }
+
+  .mountain-image-container {
+    height: 280px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -381,6 +504,38 @@ a {
 
   .feature-card {
     padding: 1.75rem;
+  }
+
+  .mountain-display {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .mountain-image-container {
+    height: 240px;
+  }
+
+  .mountain-info h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .mountain-details {
+    text-align: center;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mountain-description {
+    text-align: center;
   }
 
   .panorama-text {
