@@ -1,4 +1,4 @@
-/* Schweizer Alpen - Design */
+/* Basis Reset und Typografie */
 * {
   margin: 0;
   padding: 0;
@@ -6,282 +6,356 @@
 }
 
 :root {
-  color-scheme: light;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  color: #1a1a1a;
-  background-color: #E8F0F8;
+  color-scheme: dark;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0a2a43;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #E8F0F8;
-  color: #1a1a1a;
-  line-height: 1.8;
+  background-color: #0a2a43;
+  color: #f7f8fb;
+  line-height: 1.6;
 }
 
-/* Hero Section mit Bergen */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+/* Header */
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(10, 42, 67, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.76);
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #f2e86e;
+}
+
+/* Hero Section */
 .hero {
   position: relative;
-  height: 450px;
-  background: linear-gradient(135deg, #7BA8D1 0%, #5A8BC0 100%);
+  min-height: 96vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 60px 30px;
+  justify-content: flex-start;
+  padding: 6rem 0 5rem;
+  background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center;
 }
 
-.mountain-header {
+.hero::before {
+  content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 42, 67, 0.75) 0%, rgba(10, 42, 67, 0.4) 30%, rgba(10, 42, 67, 0.95) 100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.08), transparent 38%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  padding: 2rem;
+  backdrop-filter: blur(0px);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #d9e7f0;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .hero h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+}
+
+.hero-copy {
+  max-width: 560px;
+  font-size: 1.05rem;
+  color: #e6eef7;
+}
+
+/* Feature Section */
+.feature-section {
+  padding: 5rem 0 3rem;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-intro p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #d8e5f1;
+  font-size: 1.05rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.feature-card {
+  background: #0f3f63;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.2rem;
+  box-shadow: 0 26px 70px rgba(7, 20, 36, 0.16);
+  transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: #143f62;
+  box-shadow: 0 32px 80px rgba(7, 20, 36, 0.2);
+}
+
+.feature-card h2 {
+  font-size: 1.55rem;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.feature-card p {
+  margin-bottom: 1.5rem;
+  color: #dbe7f5;
+  line-height: 1.9;
+}
+
+.feature-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.feature-card li {
   position: relative;
-  z-index: 20;
-  font-size: 3.5rem;
-  color: white;
-  font-weight: 300;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  letter-spacing: 3px;
+  padding-left: 1.4rem;
+  color: #c9deed;
 }
 
-/* Intro Section */
-.intro {
-  padding: 80px 40px;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #E8F0F8;
+.feature-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #8ac6a0;
 }
 
-.intro p {
-  font-size: 1.1rem;
-  color: #2c2c2c;
-  line-height: 1.9;
+/* Panorama Section */
+.panorama-section {
+  margin: 0;
+  padding: 0;
 }
 
-/* Content Sections */
-.content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 40px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 60px;
-}
-
-.section-card {
-  background-color: white;
-  padding: 60px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(90, 139, 192, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(90, 139, 192, 0.2);
-}
-
-.section-card h2 {
-  font-size: 2.2rem;
-  color: #1A4B77;
-  margin-bottom: 30px;
-  font-weight: 600;
-  border-bottom: 4px solid #5A8BC0;
-  padding-bottom: 15px;
-}
-
-.section-card p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.9;
-  margin-bottom: 30px;
-}
-
-/* Image Grid */
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.image-grid figure {
-  text-align: center;
-}
-
-.image-grid img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(90, 139, 192, 0.15);
-}
-
-.image-grid figcaption {
-  margin-top: 15px;
-  font-size: 0.95rem;
-  color: #5A8BC0;
-  font-weight: 500;
-}
-
-/* Mountain Range Section */
-.mountains-section {
-  margin: 40px 0;
-  padding: 30px;
-  background-color: #F5F9FC;
-  border-radius: 8px;
-}
-
-.mountain-range {
-  width: 100%;
-  height: auto;
-  min-height: 300px;
-}
-
-/* Fun Facts Grid */
-.fun-facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.fact-item {
-  background-color: #F5F9FC;
-  padding: 30px;
-  border-radius: 8px;
-  border-left: 5px solid #5A8BC0;
-  transition: transform 0.3s ease;
-}
-
-.fact-item:hover {
-  transform: translateY(-5px);
-}
-
-.fact-item h3 {
-  font-size: 1.3rem;
-  color: #1A4B77;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.fact-item p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-.fact-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(90, 139, 192, 0.15);
-}
-
-/* Footer Mountains */
-.footer-mountains {
-  height: 200px;
-  background: linear-gradient(180deg, #E8F0F8 0%, #D0E0F0 100%);
-  margin-top: 80px;
+.panorama-inner {
+  position: relative;
   overflow: hidden;
+  border-radius: 32px;
+  min-height: 420px;
+  box-shadow: 0 36px 100px rgba(4, 11, 22, 0.28);
 }
 
-.mountain-footer {
+.panorama-inner img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.panorama-label {
+  position: absolute;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: rgba(10, 42, 67, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f7f8fb;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.label-matterhorn {
+  top: 18%;
+  left: 14%;
+}
+
+.label-montblanc {
+  bottom: 18%;
+  left: 42%;
+}
+
+.label-eiger {
+  top: 26%;
+  right: 12%;
 }
 
 /* Footer */
-footer {
-  background-color: #5A8BC0;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
+.page-footer {
+  padding: 2.5rem 0 3rem;
+  background: linear-gradient(180deg, #081a2b 0%, #0a2a43 100%);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a9b9cc;
   font-size: 0.95rem;
-  font-weight: 300;
 }
 
-/* Responsive Design */
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  .page-header {
+    padding: 0 1rem;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .hero {
-    height: 350px;
-    padding: 40px 20px;
+    min-height: 80vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    justify-content: center;
+    text-align: center;
   }
 
-  .hero h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+  .hero-content {
+    padding: 1.5rem;
   }
 
-  .intro {
-    padding: 50px 20px;
-  }
-
-  .intro p {
-    font-size: 1rem;
-  }
-
-  .content {
-    padding: 40px 20px;
-    gap: 40px;
-  }
-
-  .section-card {
-    padding: 40px;
-  }
-
-  .section-card h2 {
-    font-size: 1.8rem;
-  }
-
-  .image-grid {
+  .feature-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .image-grid img {
-    height: 250px;
+  .feature-card {
+    padding: 1.75rem;
   }
 
-  .fun-facts {
-    grid-template-columns: 1fr;
-    gap: 25px;
+  .panorama-inner {
+    min-height: 320px;
+  }
+
+  .label-matterhorn,
+  .label-montblanc,
+  .label-eiger {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
-  .hero {
-    height: 280px;
-  }
-
+@media (max-width: 520px) {
   .hero h1 {
-    font-size: 1.8rem;
-    letter-spacing: 1px;
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
   }
 
-  .section-card {
-    padding: 25px;
+  .nav-links {
+    gap: 1rem;
   }
 
-  .section-card h2 {
-    font-size: 1.5rem;
+  .header-inner {
+    justify-content: space-between;
   }
 
-  .section-card p,
-  .intro p {
-    font-size: 0.95rem;
+  .label-matterhorn,
+  .label-montblanc,
+  .label-eiger {
+    position: static;
+    display: inline-flex;
+    margin: 0.75rem 0 0;
   }
 
-  .fact-item h3 {
-    font-size: 1.1rem;
+  .panorama-inner {
+    border-radius: 20px;
   }
 }

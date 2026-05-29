@@ -1,192 +1,111 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schweizer Alpen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die Alpen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Hero mit Bergendesign -->
-    <section class="hero">
-        <svg class="mountain-header" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet">
-            <!-- Berge im Hintergrund -->
-            <polygon points="100,300 250,80 400,300" fill="#4A7BA7" opacity="0.6"/>
-            <polygon points="300,300 450,60 600,300" fill="#5A8BC0" opacity="0.7"/>
-            <polygon points="600,300 750,70 900,300" fill="#4A7BA7" opacity="0.6"/>
-            
-            <!-- Berge im Vordergrund -->
-            <polygon points="50,300 200,100 350,300" fill="#3A6B97" opacity="0.9"/>
-            <polygon points="350,300 500,40 650,300" fill="#2A5B87" opacity="1"/>
-            <polygon points="650,300 800,90 950,300" fill="#3A6B97" opacity="0.9"/>
-            
-            <!-- Schnee auf den Spitzen -->
-            <polygon points="500,40 450,120 550,120" fill="white"/>
-            <polygon points="200,100 160,160 240,160" fill="white"/>
-            <polygon points="800,90 770,145 830,145" fill="white"/>
-        </svg>
-        <h1>Schweizer Alpen</h1>
-    </section>
+  <!-- Seite beginnt hier -->
+  <header class="page-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Die Alpen</a>
+      <nav class="nav-links">
+        <a href="#hero">Start</a>
+        <a href="#story">Entstehung</a>
+        <a href="#panorama">Panorama</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Einleitungstext -->
-    <section class="intro">
-        <p>
-            Die Schweizer Alpen sind eine der beeindruckendsten Gebirgslandschaften Europas. 
-            Mit ihren majestätischen schneebedeckten Gipfeln, kristallklaren Seen und malerischen Tälern 
-            verkörpern sie die unberührte Schönheit der Natur. Diese faszinierende Bergwelt zieht jedes Jahr 
-            Millionen von Besuchern an und prägt seit Jahrtausenden die Kultur und Geschichte der Schweiz.
+  <!-- Hero-Bereich mit großem Alpenbild und Overlay -->
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content reveal">
+        <p class="eyebrow">Natur, Geschichte und Bedeutung</p>
+        <h1>Die Alpen</h1>
+        <p class="hero-copy">
+          Eine majestätische Gebirgslandschaft, die Kultur, Abenteuer und nachhaltige Natur verbindet.
         </p>
+      </div>
     </section>
 
-    <!-- Drei Hauptabschnitte -->
-    <section class="content">
-        <!-- Entstehung -->
-        <article class="section-card">
-            <h2>Entstehung</h2>
-            <p>
-                Die Schweizer Alpen entstanden vor etwa 65 Millionen Jahren durch die Kollision der 
-                afrikanischen und europäischen Kontinentalplatten. Dieser monumentale geologische Prozess 
-                führte zu massiven Gebirgsfalten und Hebungen, die bis heute anhalten. Die tektonischen 
-                Kräfte pressten Schichten von Gestein übereinander und formten die spektakulären Gipfel, 
-                die wir heute sehen.
-            </p>
-            <div class="image-grid">
-                <figure>
-                    <img src="https://images.unsplash.com/photo-1582967788606-6f5ac37e6d07?w=500&q=80" alt="Geologische Schichten">
-                    <figcaption>Geologische Schichtung in den Alpen</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="Berggipfel">
-                    <figcaption>Spektakuläre Berggipfel der Alpen</figcaption>
-                </figure>
-            </div>
+    <!-- Drei Info-Boxen zu Alpen-Themen -->
+    <section id="story" class="feature-section container">
+      <div class="section-intro reveal">
+        <p>Entdecke zentrale Aspekte der Alpen: ihre Entstehung, ihre Nutzung und wichtige Fakten.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <h2>Entstehung der Alpen</h2>
+          <p>Die Plattentektonik erklärt den Ursprung: Afrika drückte auf Eurasien und formte durch Faltung und Hebung ein mächtiges Gebirge.</p>
+          <ul>
+            <li>Kollision afrikanischer und eurasischer Platte</li>
+            <li>Gebirgsbildung durch Faltung und Hebung</li>
+            <li>Dynamische Landschaft im Wandel</li>
+          </ul>
         </article>
 
-        <!-- Wichtige Berge -->
-        <article class="section-card">
-            <h2>Wichtige Berge</h2>
-            <p>
-                Die Schweizer Alpen beherbergen einige der höchsten und berühmtesten Gipfel Europas. 
-                Der Dom (4'545 m) ist der höchste Berg der Schweiz, während das Matterhorn (4'478 m) 
-                weltweit als einer der ikonischsten Berge gilt. Der Eiger (3'970 m) ist berüchtigt für 
-                seine tödliche Nordwand und zieht Bergsteiger aus aller Welt an.
-            </p>
-            <div class="mountains-section">
-                <svg class="mountain-range" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-                    <!-- Berge mit unterschiedlichen Höhen -->
-                    <polygon points="100,400 180,200 260,400" fill="#5A8BC0" stroke="#2A5B87" stroke-width="2"/>
-                    <polygon points="250,400 380,80 510,400" fill="#3A6B97" stroke="#1A4B77" stroke-width="2"/>
-                    <polygon points="500,400 650,150 800,400" fill="#4A7BA7" stroke="#2A5B87" stroke-width="2"/>
-                    <polygon points="750,400 900,120 1050,400" fill="#3A6B97" stroke="#1A4B77" stroke-width="2"/>
-                    
-                    <!-- Schneespitzen -->
-                    <polygon points="180,200 150,260 210,260" fill="white"/>
-                    <polygon points="380,80 330,160 430,160" fill="white"/>
-                    <polygon points="650,150 610,210 690,210" fill="white"/>
-                    <polygon points="900,120 860,180 940,180" fill="white"/>
-                    
-                    <!-- Pfeile und Beschriftungen -->
-                    <defs>
-                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                            <polygon points="0 0, 10 3, 0 6" fill="#D4541F" />
-                        </marker>
-                    </defs>
-                    
-                    <!-- Pfeile zu Bergen -->
-                    <line x1="150" y1="150" x2="180" y2="200" stroke="#D4541F" stroke-width="2" marker-end="url(#arrowhead)"/>
-                    <text x="80" y="140" font-family="Arial" font-size="16" font-weight="bold" fill="#1A4B77">Dom</text>
-                    
-                    <line x1="380" y1="50" x2="380" y2="80" stroke="#D4541F" stroke-width="2" marker-end="url(#arrowhead)"/>
-                    <text x="320" y="40" font-family="Arial" font-size="16" font-weight="bold" fill="#1A4B77">Matterhorn</text>
-                    
-                    <line x1="650" y1="100" x2="650" y2="150" stroke="#D4541F" stroke-width="2" marker-end="url(#arrowhead)"/>
-                    <text x="570" y="85" font-family="Arial" font-size="16" font-weight="bold" fill="#1A4B77">Eiger</text>
-                    
-                    <line x1="900" y1="80" x2="900" y2="120" stroke="#D4541F" stroke-width="2" marker-end="url(#arrowhead)"/>
-                    <text x="830" y="65" font-family="Arial" font-size="14" font-weight="bold" fill="#1A4B77">Jungfrau</text>
-                </svg>
-            </div>
+        <article class="feature-card reveal">
+          <h2>Nutzung früher und heute</h2>
+          <p>Die Alpen waren schon immer Ort von Leben und Arbeit. Heute stehen Tourismus und Naturschutz im Fokus.</p>
+          <ul>
+            <li>Früher: Viehzucht, Wohnraum, Landwirtschaft</li>
+            <li>Heute: Tourismus, Wintersport, Wirtschaft, Naturschutz</li>
+          </ul>
         </article>
 
-        <!-- Fun Facts -->
-        <article class="section-card">
-            <h2>Fun Facts</h2>
-            
-            <div class="fun-facts">
-                <div class="fact-item">
-                    <h3>🏔️ Höchster Punkt</h3>
-                    <p>
-                        Der Dom ist mit 4'545 Metern der höchste Berg der Schweiz. 
-                        Er liegt in den Wallis Alpen und ist einer der beliebtesten Berge für 
-                        Hochgebirgstouristen.
-                    </p>
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="Dom Berg">
-                </div>
-
-                <div class="fact-item">
-                    <h3>🧗 Extremes Bergsteigen</h3>
-                    <p>
-                        Das Matterhorn ist berühmt für seine spektakuläre Nordwand, eine der 
-                        schwierigsten Bergsteigerrouten in den Alpen. Tausende versuchen den Aufstieg jährlich.
-                    </p>
-                    <img src="https://images.unsplash.com/photo-1537225228614-b4fad34a0b19?w=500&q=80" alt="Bergsteiger">
-                </div>
-
-                <div class="fact-item">
-                    <h3>⛷️ Wintersport Paradies</h3>
-                    <p>
-                        Die Schweizer Alpen bieten über 200 Skigebiete mit hervorragenden 
-                        Bedingungen. Jährlich kommen über 20 Millionen Skifahrer in die Region.
-                    </p>
-                    <img src="https://images.unsplash.com/photo-1551028719-00167b16ebc5?w=500&q=80" alt="Skifahren">
-                </div>
-
-                <div class="fact-item">
-                    <h3>🚴 Wandern & Mountainbiking</h3>
-                    <p>
-                        Mit über 50.000 km Wanderwegen ist die Schweiz ein Paradies für Wanderer 
-                        und Mountainbiker. Die Vielfalt der Landschaften ist unvergleichlich.
-                    </p>
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="Wanderer">
-                </div>
-
-                <div class="fact-item">
-                    <h3>🧀 Alpenwirtschaft</h3>
-                    <p>
-                        Die Almen sind seit Jahrhunderten Heimat der Schweizer Alpenkultur. 
-                        Die Kuhmilch wird zu weltberühmtem Schweizer Käse wie Emmentaler und Gruyère verarbeitet.
-                    </p>
-                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80" alt="Alpwirtschaft">
-                </div>
-
-                <div class="fact-item">
-                    <h3>❄️ Klimawandel & Gletscher</h3>
-                    <p>
-                        Die Schweizer Gletscher schrumpfen dramatisch. Der Aletschgletscher, 
-                        der längste Gletscher der Alpen, verliert jährlich Millionen Tonnen Eis.
-                    </p>
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="Gletscher">
-                </div>
-            </div>
+        <article class="feature-card reveal">
+          <h2>Allgemeine Fakten</h2>
+          <p>Ein Gebirge, das sich über mehrere Länder erstreckt und zahlreiche bekannte Gipfel beherbergt.</p>
+          <ul>
+            <li>Länge der Alpen: ca. 1200 km</li>
+            <li>Länder: Schweiz, Österreich, Italien, Frankreich u. a.</li>
+            <li>Bekannte Berge: Matterhorn, Mont Blanc, Eiger</li>
+          </ul>
         </article>
+      </div>
     </section>
 
-    <!-- Bergkette Abschluss -->
-    <section class="footer-mountains">
-        <svg class="mountain-footer" viewBox="0 0 1200 250" preserveAspectRatio="none" preserveAspectRatio="xMidYMid slice">
-            <polygon points="0,250 50,150 100,250" fill="#4A7BA7"/>
-            <polygon points="80,250 150,100 220,250" fill="#3A6B97"/>
-            <polygon points="200,250 300,50 400,250" fill="#2A5B87"/>
-            <polygon points="380,250 480,80 580,250" fill="#3A6B97"/>
-            <polygon points="560,250 680,60 800,250" fill="#2A5B87"/>
-            <polygon points="780,250 880,120 980,250" fill="#3A6B97"/>
-            <polygon points="950,250 1050,100 1150,250" fill="#4A7BA7"/>
-            <polygon points="1100,250 1200,150 1300,250" fill="#3A6B97"/>
-        </svg>
+    <!-- Panorama-Bereich mit Beschriftungen -->
+    <section id="panorama" class="panorama-section reveal">
+      <div class="panorama-inner container">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80" alt="Panorama der Alpen" />
+        <div class="panorama-label label-matterhorn">Matterhorn</div>
+        <div class="panorama-label label-montblanc">Mont Blanc</div>
+        <div class="panorama-label label-eiger">Eiger</div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2026 Entdecke die Wunder der Schweizer Alpen</p>
-    </footer>
+  <!-- Footer der Seite -->
+  <footer class="page-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Die Alpen. Reise sanft durch Natur und Geschichte.</p>
+    </div>
+  </footer>
+
+  <!-- Optionales JavaScript für sanfte Scrollanimationen -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.2,
+    });
+
+    revealElements.forEach((element) => observer.observe(element));
+  </script>
 </body>
 </html>
